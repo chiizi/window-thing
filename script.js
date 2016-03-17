@@ -1,4 +1,7 @@
-const _win = (p) => {
+const _dock = parent => {
+  parent.appendChild(document.importNode(document.querySelector("template.window").content, true).querySelector(".dock"))
+}
+const _win = p => {
   var e = document.querySelector("template.window")
   e.content.querySelector(".content").innerHTML = p.content
   e = document.importNode(e.content, true).querySelector(".window")
