@@ -1,20 +1,20 @@
 const _win = (p) => {
-  var e = document.querySelector("template.win")
+  var e = document.querySelector("template.window")
   e.content.querySelector(".content").innerHTML = p.content
   e = document.importNode(e.content, true).querySelector(".window")
   $(e).draggable({
     cancel: ".content",
     containment: p.ct || "body",
     scroll: false,
-		stack: { group: ".window", min: 1 }
+    stack: { group: ".window", min: 1 }
   }).resizable({
-		handles: "e, s, se",
-		containment: p.ct || "body",
-		minHeight: p.mw || p.w,
-		minWidth: p.mh || p.h,
-		maxHeight: p.xw || $(window).height(),
-		maxWidth: p.xh || $(window).width()
-	}).dblclick(function(e) {
+    handles: "e, s, se",
+    containment: p.ct || "body",
+    minHeight: p.mw || p.w,
+    minWidth: p.mh || p.h,
+    maxHeight: p.xw || $(window).height(),
+    maxWidth: p.xh || $(window).width()
+  }).dblclick(function(e) {
     if (this == e.target)
       $(this).toggleClass("max")
   })
