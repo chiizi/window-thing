@@ -1,0 +1,207 @@
+@import "//chiizi.github.io/master.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #eadfcd;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border: none;
+  border-radius: 50%;
+  transition: width 0.05s linear, height 0.05s linear;
+}
+.circle button.a {
+  width: 100%;
+  height: 100%;
+  transition: width 0.15s linear, height 0.15s linear;
+}
+
+.window {
+  border-radius: 8px;
+  box-shadow: 0 18px 40px 5px rgba(0, 0, 0, 0.36);
+  background: linear-gradient(to bottom, #f0f0f0, #e9e9e9);
+  height: 146px;
+  left: 200px;
+  padding-bottom: 36px;
+  position: absolute;
+  top: 125px;
+  width: 389px;
+  z-index: 1;
+  font-family: bau;
+  font-size: 0.9em;
+}
+.window .title {
+  position: relative;
+  color: #000;
+  height: 24px;
+  padding: 6px 0 6px 6px;
+  pointer-events: none;
+}
+.window .title .btn-min, .window .title .btn-max {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: #7986CB;
+  pointer-events: all;
+}
+.window .title .btn-min button {
+  background: #3F51B5;
+}
+.window .title .btn-max {
+  position: absolute;
+  background: #B2DFDB;
+  right: 6px;
+}
+.window .title .btn-max button {
+  background: #4DB6AC;
+}
+.window .content {
+  border-radius: 4px;
+  background-color: #e6e6e6;
+  color: #000;
+  height: 100%;
+  margin: 0 6px;
+  overflow: auto;
+  padding: 5px;
+  position: relative;
+  top: 5px;
+  white-space: nowrap;
+}
+.window .content p {
+  margin-bottom: 10px;
+}
+.window .content img {
+  background-color: #F1F1F1;
+  border: 1px solid #DDD;
+  float: left;
+  margin: 0px 20px 10px 0px;
+  padding: 1px;
+}
+
+.max {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.dock {
+  position: absolute;
+  padding: 10px;
+  background: linear-gradient(to top, #f0f0f0, #e9e9e9);
+  border-radius: 8px 8px 0 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dock .icon {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  float: left;
+}
+.dock .icon .circle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75px;
+  height: 75px;
+  border-radius: 37.5px;
+  background: #FFF59D;
+}
+.dock .icon .circle button {
+  background: #FFEB3B;
+}
+.dock .icon + .icon {
+  margin-left: 10px;
+}
+
+.ui-resizable-handle {
+  display: block;
+  position: absolute;
+}
+
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle {
+  display: none;
+}
+
+.ui-resizable-n, .ui-resizable-s {
+  height: 7px;
+  left: 0px;
+  width: 100%;
+}
+
+.ui-resizable-n {
+  cursor: n-resize;
+  top: -5px;
+}
+
+.ui-resizable-s {
+  bottom: -5px;
+  cursor: s-resize;
+}
+
+.ui-resizable-e, .ui-resizable-w {
+  height: 100%;
+  top: 0px;
+  width: 7px;
+}
+
+.ui-resizable-e {
+  cursor: e-resize;
+  right: -5px;
+}
+
+.ui-resizable-w {
+  cursor: w-resize;
+  left: -5px;
+}
+
+.ui-resizable-se, .ui-resizable-sw, .ui-resizable-nw, .ui-resizable-ne {
+  height: 12px;
+  width: 12px;
+}
+
+.ui-resizable-se {
+  bottom: 0px;
+  cursor: se-resize;
+  right: 0px;
+}
+
+.ui-resizable-sw {
+  bottom: 0px;
+  cursor: sw-resize;
+  left: 0px;
+}
+
+.ui-resizable-nw {
+  cursor: nw-resize;
+  left: 0px;
+  top: 0px;
+}
+
+.ui-resizable-ne {
+  cursor: ne-resize;
+  right: 0px;
+  top: 0px;
+}
